@@ -1,47 +1,59 @@
-# Na pasta codeChallenge
+# Rodando o Projeto com Docker
+Para rodar a aplicação com Docker, siga as instruções abaixo.
 
-Caso decida mudar algo no código, tenha certeza de sempre implementar novas mudanças para o docker, assim, atualizando-o. Para que isso ocorra, lembre-se de rodar o seguinte comando no seu CMD:
+## Navegue para o diretório raiz do projeto
 
-### `mvn clean package`
+```bash
+cd ./codeChallenge
+```
 
-Ao rodar este comando, o Maven irá gerar um novo pacote do seu projeto, rodando todos os devidos testes para garantir que não haja erros!
+## Empacote o projeto com Maven
+Após clonar o projeto ou sempre que fizer alterações no backend, você deve empacotar o projeto novamente para garantir que as mudanças sejam refletidas no Docker. No terminal (na raiz do projeto), rode o comando:
 
-Após isso, lembre-se também de implementar suas mudanças no Docker. Recomendo que sempre que realizar novas mudanças, derrube o atual host da sua aplicação e gere novamente os containers.
-Para isso, segue o comando para realizar esta ação:
+```bash
+mvn clean package
+```
+Isso vai compilar o projeto, rodar os testes e gerar um novo pacote que será utilizado no container Docker.
 
-## É imprencidivel que você acesse a pasta do docker-compose: `cd ./corelab-challenge` antes de realizar as ações do docker-compose.
+# Atualizando os Containers Docker
+Após compilar o projeto, derrube os containers atuais e suba novamente com as novas alterações. Use os comandos abaixo:
 
-### `docker-compose down`
+Derrube os containers rodando:
 
-Em seguida, caso seja um sucesso a queda dos containers, suba novamente com as alterações realizadas.
+```bash
+docker-compose down
+```
 
-### `$env:DOCKER_BUILDKIT=0; docker-compose up --build`
+Suba os containers novamente, recriando as imagens:
 
-`$env:DOCKER_BUILDKIT=0`: desativa o BuildKit, o que pode resultar em uma construção mais lenta, mas com melhor compatibilidade para projetos mais antigos.
+```bash
+$env:DOCKER_BUILDKIT=0; docker-compose up --build
+```
 
-`docker-compose up --build`: O comando --build força a reconstrução das imagens antes de iniciar os containers, garantindo que a versão mais recente do seu projeto, compilada pelo Maven com mvn clean package, seja utilizada.
+O que os comandos fazem:
 
-Depois de rodar o docker-compose up, irá gerar containers do app em geral, tanto para o banco de dados, para a API e para o frontend.
+`$env:DOCKER_BUILDKIT=0`: Desativa o BuildKit para garantir maior compatibilidade durante a construção das imagens.
 
-Lembrando, é imprencidivel também que o projeto frontend esteja ao lado do projeto backend. Isso significa que deve estar mais ou menos assim a arquitetura na sua pasta:
+`docker-compose up --build`: Força a reconstrução das imagens Docker com as novas alterações, garantindo que a versão mais recente seja utilizada.
 
-- codeChallenge (aqui é o projeto Java)
-- corelab-frontend (aqui é o projeto React)
+# Verificando os Containers
+Para verificar se os containers estão rodando corretamente, você pode usar o comando:
+
+```bash
+docker ps
+```
+
+Este comando lista todos os containers ativos. Os containers criados devem ser:
+
+- corelab-challenge
+  - react_dev-1 (Frontend React rodando na porta 3000)
+  - postgres_dev-1 (Banco de dados PostgreSQL rodando nas portas 5432/5433)
+  - java_dev-1 (Backend Java rodando na porta 8080)
 
 
-# Enquanto roda
+> [!IMPORTANT]
+> # Desenvolvimento e Testes
+>
+> Este projeto foi desenvolvido ao longo de aproximadamente 2 dias, com 8 horas dedicadas por dia. O tempo adicional foi dedicado à criação de testes unitários e de integração, principalmente no frontend, que demandou mais atenção.
 
-Podemos analisar o Docker hub ou no prompt de comando, executar o seguinte `docker ps`, com isso podemos analisar os containers criados.
-
-A ordem será a seguinte, primeiramente o docker-compose irá criar o container pai, chamado "corelab-challenge", e em seguida irá criar os containers filhos:
-
-- "react_dev-1"
-- "postgres_dev-1"
-- "java_dev-1"
-
-A API Java irá rodar na porta 8080, o frontend irá rodar na porta padrão também "3000" e o banco de dados também irá rodar na porta padrão, "5432/5433". Repare que o banco de dados tem 2 portas, isso acontece para caso você esteja utilizando o PostgreSQL em sua máquina e o serviço do mesmo estiver ocupando a porta padrão 5432.
-
-## Quanto tempo levei para desenvolver o projeto?
-
-O projeto levou cerca de 2 dias "trabalhados (8 horas por dia)", e pode ser que tenha levado mais tempo, porém, isso aconteceu pois levei em consideração os testes unitários/integrados, o que eu confesso que levei um pouco mais de tempo para realizar principalmente os testes do frontend...
-
+Se você encontrar qualquer problema ou tiver dúvidas, fique à vontade para abrir uma issue ou entrar em contato!
