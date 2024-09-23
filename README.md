@@ -1,79 +1,59 @@
-# Code Challenge Java
+# Corelab Code Challenge
+Este repositório contém a solução do Corelab Code Challenge, composto por um backend em Java e um frontend em React, ambos containerizados com Docker.
+Este README vai te guiar por todos os passos necessários para rodar a aplicação localmente e garantir que você possa modificar e executar o projeto sem problemas.
 
-## Challenge Overview:
+Com este projeto é possível criar, ler/visualizar, atualizar e deletar notas de tarefas em sua tela de forma dinâmica e assíncrona.
 
-You are tasked with building a web application that allows users to create and manage their to-do lists. The application should consist of a responsive webpage built in React, and an API built in Java Spring Boot to store and manage the to-do lists.
+Neste sentido, segui desenvolvendo features para deixar uma aplicação web consistente, responsivel e com uma interface amigável e atraente. Uma das features desenvolvidas, seria o sistema Dark Mode.
+Para que o usuário possa acessar a página sem problemas de caridade ou seguir com suas necessidades do sistema, podemos transicionar o tema da página tanto para o tema claro para o tema escuro, ou, simplesmente não precisamos mudar, pois inicialmente irá puxar as 
+configurações do seu sistema.
 
-### The Repositories
-- **Frontend**: Built with React. You can also choose another React framework if you prefer.
-- **Backend**: Built with Java Spring Boot, utilizing any database of your choice (e.g., MySQL, PostgreSQL, MongoDB, or in-memory).
+# Estrutura do Projeto
+A arquitetura do projeto é dividida em duas pastas principais:
 
-### The Layout
-Refer to the provided [layout mockup](https://www.figma.com/file/sQrUVHTlyogq3qGdkqGTXN/mockup?node-id=7%3A2&t=ANTOTiqjqGWYuoUr-0) for both desktop and mobile versions. Please follow this design as closely as possible.
+- codeChallenge - Este é o projeto backend, desenvolvido com Java e Spring Boot.
+- corelab-frontend - Este é o projeto frontend, desenvolvido com React.
 
-### Functionality Requirements:
+# Pré-requisitos
+Antes de começar, certifique-se de que você tem as seguintes ferramentas instaladas no seu sistema:
 
-1. Users should be able to **create**, **read**, **update**, and **delete** to-do items using the API.
-2. Users should be able to **mark an item as a favorite**.
-3. Users should be able to **assign a color** to each to-do item.
-4. The React frontend should display the user's to-do list in a responsive and visually appealing manner, with the ability to **filter** by favorite items and color.
-5. Favorited items should appear at the top of the list.
+- Docker
+- Java 11 ou superior
+- Maven
+- Node: ^16.15.0
+- NPM: ^8.5.5
 
-### Technical Requirements:
-1. **Backend API**:
-   - Built using **Java Spring Boot**.
-   - Use any database of your choice (e.g., PostgreSQL, MongoDB, in-memory, etc.).
-2. **Frontend**:
-   - Built using **React** and modern web development tools.
-3. **Responsive Design**:
-   - The application should be fully responsive, providing a seamless experience across desktop and mobile devices.
+## Decisões Tomadas
 
-### Deliverables:
+1. **Estrutura do Projeto:**
+   - O backend foi desenvolvido em Java com Spring Boot e o frontend foi construído com React.
+   - Docker foi utilizado para containerizar ambos os projetos, facilitando a execução local.
 
-1. A link to a GitHub repository containing the complete source code for both the **backend** and **frontend**.
-2. A written description of how to set up and run the application locally.
+2. **Implementação do Backend:**
+   - Foi implementada uma API REST com os seguintes endpoints:
+     - `GET api/toDos` - Lista todas as tarefas.
+     - `POST api/toDos` - Cria uma nova tarefa.
+     - `PUT api/toDos/{id}` - Atualiza uma tarefa existente.
+     - `DELETE api/toDos/{id}` - Remove uma tarefa.
 
-### Evaluation Criteria:
+3. **Implementação do Frontend:**
+   - O frontend foi desenvolvido com React e Bootstrap para estilização.
+   - A aplicação consome a API Java e apresenta uma interface de lista de tarefas.
 
-1. **Code Quality**: Well-structured and maintainable code.
-2. **Code Format**: Consistent and follows best practices.
-3. **Code Performance**: Efficient and scalable solutions.
-4. **Frontend Design**: A user-friendly, visually appealing interface.
-5. **Readability**: Is the code easy to understand and maintain?
-6. **Mobile-First Approach**: The design should prioritize mobile responsiveness.
-7. **Code Responsibility**: Clean separation of concerns (frontend vs. backend).
-8. **Feature Completeness**: Does the app meet all the listed functional requirements?
-9. **Responsiveness**: Does the app work well across different screen sizes?
-10. **Best Practices**: Use of modern web tools and standards.
-11. **Design**: Does the app follow the provided design mockup?
-12. **Documentation**: Well-documented code and setup instructions.
+4. **Containerização:**
+   - Ambos os projetos foram dockerizados utilizando Docker Compose para rodar a aplicação completa com o banco de dados PostgreSQL.
 
-### Backend:
-1. **Java**: Version 11+
-2. **Framework**: Spring Boot
-3. **Database**: Choose your own, or use an in-memory database (e.g., H2).
+## Detalhes Técnicos
 
-### Frontend:
-1. **Node**: ^16.15.0
-2. **NPM**: ^8.5.5
-3. **Framework**: React
-4. **CSS**: Sass or another preprocessor of your choice.
+- **Linguagens e Ferramentas Utilizadas:**
+  - Backend: Java 21, Spring Boot
+  - Frontend: React, JavaScript, CSS, Bootstrap
+  - Banco de Dados: PostgreSQL
+  - Containerização: Docker, Docker Compose
+  - Gerenciamento de dependências: Maven para o backend
 
-### Want to Impress Us Even More?
-
-1. Correctly define types and interfaces.
-2. Set up and enforce **ESLint** rules.
-3. Create a **Prettier** configuration for consistent formatting.
-4. Containerize the app with **Docker**.
-5. Write unit and integration **tests**.
-6. Set up **CI/CD** pipelines for automated testing and deployment.
-
-### Instructions for Submission:
-
-1. Create a file `PULL_REQUEST.md` in which you describe your process, the decisions you made, and any important details about the implementation.
-2. Create a pull request for both the **backend** and **frontend** repositories using the same branch name.
-3. Send us the pull request and you're done!
-
----
-
-Good luck! 🚀
+> [!IMPORTANT]
+> # Implementação do projeto
+> - Acesse o README de cada pasta (codeChallenges, corelab-frontend), para que você possa acompanhar os detalhes importantes para a implementação de cada projeto.
+>
+> - Não é necessário executar rodar ambos os projetos, ao seguir com o passo a passo do README do codeChallenges, será possível acessar as rotas a partir do link-host do Docker.

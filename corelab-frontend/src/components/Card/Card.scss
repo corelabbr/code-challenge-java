@@ -1,0 +1,115 @@
+.card {
+    padding: 20px;
+    border-radius: 30px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    min-width: 350px !important;
+    min-height: 430px !important;
+    color: black !important;
+}
+
+.btns-card {
+  background-color: transparent;
+  color: #121212 !important;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.buttons-editors
+{
+    display: flex;
+    gap: 10px;
+}
+
+.card-actions
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-description
+{
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card.light-blue, .note-title.light-blue, .note-content.light-blue {
+    background-color: #cce4ff;
+  }
+  
+  
+  .card.white, .note-title.white, .note-content.white {
+    background-color: #ffffff;
+  }
+
+  .card.pink, .note-title.pink, .note-content.pink {
+    background-color: #ffccf2;
+  }
+  
+  .card.yellow, .note-title.yellow, .note-content.yellow {
+    background-color: #fff7cc;
+  }
+  
+  .card.green, .note-title.green, .note-content.green {
+    background-color: #ccffe5;
+  }
+  
+  .card.orange, .note-title.orange, .note-content.orange {
+    background-color: #ffcc99;
+  }
+  
+  .card.gray, .note-title.gray, .note-content.gray {
+    background-color: #d1d1d1;
+  }
+  
+  .card.beige, .note-title.beige, .note-content.beige {
+    background-color: #e6ccb2;
+  }
+  
+  .card.purple, .note-title.purple, .note-content.purple {
+    background-color: #d4b3ff;
+  }
+  
+  .color-picker-popup {
+    position: absolute;
+    bottom: -40px;
+    left: 80px;
+    background-color: white;
+    border: 1px solid #D9D9D9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 8px;
+    z-index: 1000;
+  
+    .color {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.2s ease-in-out;
+  
+      &:hover {
+        border-color: #000;
+      }
+  
+      &.light-blue { background-color: #cce4ff; }
+      &.pink { background-color: #ffccf2; }
+      &.yellow { background-color: #fff7cc; }
+      &.green { background-color: #ccffe5; }
+      &.orange { background-color: #ffcc99; }
+      &.gray { background-color: #d1d1d1; }
+      &.beige { background-color: #e6ccb2; }
+      &.purple { background-color: #d4b3ff; }
+    }
+  }
+  

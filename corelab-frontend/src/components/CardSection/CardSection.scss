@@ -1,0 +1,26 @@
+.card-section {
+  padding: 0 5em;
+
+  @media (max-width: 768px) {
+    padding: 0 1em;
+  }
+}
+
+.favorites, .others {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.favorites .card, .others .card {
+  width: 100%;
+  max-width: 300px;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .favorites .card, .others .card {
+    min-width: 40% !important;
+  }
+}

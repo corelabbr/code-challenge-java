@@ -1,0 +1,81 @@
+.note-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 5em;
+}
+
+.note-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 2em;
+}
+
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-title {
+  font-size: 18px;
+  border: none;
+  outline: none;
+  width: 80%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 0.4em;
+  color: black;
+}
+
+.favorite-icon {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black; 
+  transition: color 0.3s ease;
+}
+
+.favorite-icon.favorite {
+  color: gold;
+}
+
+.separator {
+  border: 0;
+  border-top: 1px solid #696969;
+  margin: 0px 0;
+}
+
+.note-content {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  resize: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.4em;
+  color: black;
+}
+
+.create-note-title, .create-note-content
+{
+  color: black;
+  
+
+  [data-bs-theme="dark"] & {
+    background-color: #333333;
+    color: white;
+  }
+}
+
+.btn-save:hover {
+  background-color: #0056b3;
+}
