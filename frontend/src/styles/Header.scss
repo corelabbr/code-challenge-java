@@ -1,0 +1,74 @@
+@import "./_colors.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: $color-header-background;
+  border-bottom: 1px solid $color-border;
+  box-shadow: 0px 1px 7px 0px $color-shadow;
+  margin-bottom: 20px;
+
+  .header-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: 0.875rem;
+      line-height: 1.071;
+      margin: 0 0.9375rem;
+
+      @media (max-width: 300px) {
+        display: none;
+      }
+    }
+  }
+
+  .header-search {
+    display: flex;
+    align-items: center;
+
+    input {
+      padding: 0.5rem;
+      border: 1px solid $color-input-border;
+      margin-right: 0.5rem;
+      width: 500px;
+      box-shadow: 1px 1px 3px 0px $color-shadow;
+      font-size:  9px;
+      color: $color-grey-dark;
+      background-color: $color-white;
+
+      &::placeholder {
+        color: $color-grey-light;
+      }
+    }
+
+    .search-button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: $color-grey-dark;
+
+      &:hover {
+        color: $color-button-hover;
+      }
+    }
+
+    @media (max-width: 768px) {
+      input {
+        width: 300px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      input {
+        width: 150px;
+        margin-left: 25px;
+      }
+    }
+  }
+}

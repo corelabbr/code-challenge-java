@@ -1,79 +1,155 @@
-# Code Challenge Java
+# Todo App
 
-## Desafio Overview:
+Um aplicativo web de gerenciamento de tarefas, projetado para oferecer uma experiência intuitiva e eficiente na organização do dia a dia. A aplicação utiliza React no frontend, proporcionando uma interface dinâmica e responsiva, enquanto o Java Spring Boot no backend garante um desempenho robusto e escalável. O sistema permite aos usuários criar, ler, atualizar e excluir tarefas de forma simples, com a possibilidade de marcar itens como favoritos e atribuir cores a cada tarefa, facilitando a categorização e priorização.
 
-Você tem a tarefa de criar um aplicativo da Web que permita aos usuários criar e gerenciar suas listas de tarefas. O aplicativo deve consistir em uma página da Web responsiva construída em React e uma API construída em Java Spring Boot para armazenar e gerenciar as listas de tarefas.
+## Funcionalidades
 
-### Os Repositórios
-- **Frontend**: Construído com React. Você também pode escolher outro framework React, se preferir.
-- **Backend**: Construído com Java Spring Boot, utilizando qualquer banco de dados de sua escolha (por exemplo, MySQL, PostgreSQL, MongoDB ou em memória).
+- Criar, ler, atualizar e excluir itens de tarefas.
+- Marcar itens como favoritos.
+- Atribuir cores a cada item de tarefa.
+- Filtrar tarefas por favoritos e cores.
+- Interface responsiva para desktop e dispositivos móveis.
+- Teste unitário para o hook customizado
+- Definição de interfaces e types no backend e frontend
 
-### O Layout
-Consulte o [mockup do layout](https://www.figma.com/file/sQrUVHTlyogq3qGdkqGTXN/mockup?node-id=7%3A2&t=ANTOTiqjqGWYuoUr-0) nas versões desktop e mobile. Siga este design o mais fielmente possível.
+## Tecnologias Utilizadas
 
-### Funcionalidades Requeridas:
+- **Frontend:** React, Typescript, Sass, Axios
+- **Backend:** Java Spring Boot, MySQL
+- **Docker:** Contêineres para o backend, frontend e banco de dados
 
-1. Os usuários devem ser capazes de **criar**, **ler**, **atualizar** e **excluir** itens de tarefas usando a API.
-2. Os usuários devem poder **marcar um item como favorito**.
-3. Os usuários devem poder **atribuir uma cor** a cada item de tarefa.
-4. O frontend React deve exibir a lista de tarefas do usuário de forma responsiva e visualmente atraente, com a capacidade de **filtrar** por itens favoritos e cor.
-5. Os itens favoritos devem aparecer no topo da lista.
 
-### Requisitos Técnicos:
-1. **API de Backend**:
-   - Construído usando **Java Spring Boot**.
-   - Use qualquer banco de dados de sua escolha (por exemplo, PostgreSQL, MongoDB, em memória, etc.).
-2. **Frontend**:
-   - Construído usando **React** e ferramentas modernas de desenvolvimento web.
-3. **Design Responsivo**:
-   - O aplicativo deve ser totalmente responsivo, proporcionando uma experiência perfeita em dispositivos desktop e mobile.
+## Estrutura do Projeto
 
-### Entregáveis:
+    /project-root
+    │
+    ├── /backend       # Código do backend (Java Spring Boot)
+    │   ├── Dockerfile
+    │   ├── pom.xml
+    │   └── /src       # Código-fonte do backend
+    │       ├── /main  # Código principal
+    │       │   ├── /java  # Código Java
+    │       │   └── /resources  # Recursos como templates e arquivos de configuração
+    │       └── /test  # Testes
+    │
+    ├── /frontend      # Código do frontend (React)
+    │   ├── Dockerfile
+    │   ├── package.json
+    │   ├── /public    # Arquivos públicos
+    │   └── /src       # Código-fonte do frontend
+    │       ├── /components  # Componentes React
+    │       ├── /hooks       # Hooks customizados (Testes _unitários_para cada hook dentro dessa pasta)
+    │       ├── /services    # Serviço que realiza conexão com api externa
+    │       └── /styles      # Estilos (Sass)
+    │       └── App.tsx      # Pagina principal
+    │
+    └── docker-compose.yml  # Arquivo de configuração do Docker Compose
 
-1. Um link para um repositório GitHub contendo o código-fonte completo tanto para o **backend** quanto para o **frontend**.
-2. Uma descrição por escrito de como configurar e executar o aplicativo localmente.
 
-### Critério de Avaliação:
 
-1. **Qualidade do Código**: Código bem estruturado e de fácil manutenção.
-2. **Formato do Código**: Consistente e segue as melhores práticas.
-3. **Desempenho do Código**: Soluções eficientes e escaláveis.
-4. **Design de Frontend**: Uma interface de usuário amigável e visualmente atraente.
-5. **Legibilidade**: O código é fácil de entender e manter?
-6. **Abordagem Mobile-First**: O design deve priorizar a responsividade móvel.
-7. **Responsabilidade do Código**: Separação clara de responsabilidades (frontend vs. backend).
-8. **Funcionalidade Completa**: O app atende a todos os requisitos funcionais listados?
-9. **Capacidade de Resposta**: O aplicativo funciona bem em diferentes tamanhos de tela?
-10. **Boas Práticas**: Uso de ferramentas modernas de desenvolvimento web e padrões.
-11. **Design**: O aplicativo segue o mockup fornecido?
-12. **Documentação**: Código bem documentado e instruções de configuração claras.
+ ## Configuração do Ambiente
+ ### Pré-requisitos
 
-### Backend:
-1. **Java**: Versão 11+
-2. **Framework**: Spring Boot
-3. **Banco de Dados**: Escolha o seu, ou use um banco de dados em memória (por exemplo, H2).
+- Docker e Docker Compose instalados
+ ### Instruções de Execução
 
-### Frontend:
-1. **Node**: ^16.15.0
-2. **NPM**: ^8.5.5
-3. **Framework**: React
-4. **CSS**: Sass ou outro pré-processador de sua escolha.
+1. Clone o repositório:
 
-### Quer Nos Impressionar Ainda Mais?
+   ```bash
+   git clone https://github.com/santowilll/code-challenge-java.git
+   cd code-challenge-java
+2.  Navegue até o diretório do backend:
+	 ```bash
+	cd backend/
+3. Compile o projeto com o Maven: Execute o seguinte comando para compilar e empacotar seu aplicativo:
+	 ```bash
+	mvn clean package
+4. Verifique se o arquivo `.jar` foi gerado: Certifique-se de que o arquivo `.jar` está na pasta `target`:
+	```bash
+	ls target/
+5. Execute o Docker Compose: Agora que o arquivo `.jar` foi gerado, você pode navegar até o diretório raiz do seu projeto (onde está o arquivo `docker-compose.yml`) e executar o Docker Compose:
+    ```bash
+    cd ../
+    docker-compose up --build 
+6.  Acesse o aplicativo:
+    
+    -   Frontend: http://localhost:3000
+    -   Backend: http://localhost:8080
 
-1. Defina corretamente tipos e interfaces.
-2. Configure e aplique regras do **ESLint**.
-3. Crie uma configuração do **Prettier** para formatação consistente.
-4. Containerize o app com **Docker**.
-5. Escreva **testes** unitários e de integração.
-6. Configure pipelines de **CI/CD** para testes e deploy automatizados.
+### Testando o Backend com Thunder Client (Opcional)
 
-### Instruções para Submissão:
+Para facilitar os testes da API, adicionei uma coleção do Thunder Client ao projeto. Essa coleção contém todas as rotas da API, permitindo que você teste facilmente as funcionalidades do backend sem a necessidade de criar chamadas de API manualmente.
 
-1. Crie um arquivo `PULL_REQUEST.md` onde você descreva o processo, decisões tomadas e quaisquer detalhes importantes sobre a implementação.
-2. Crie uma solicitação pull para os repositórios **backend** e **frontend** usando o mesmo nome de branch.
-3. Envie-nos o pull request e pronto!
+#### Como Usar
 
----
+1. **Instale o Thunder Client:** Caso ainda não tenha, instale a extensão Thunder Client na sua IDE (por exemplo, Visual Studio Code).
+2. **Importe a Coleção:** 
+   - Abra o Thunder Client.
+   - Clique em "Import" e selecione a coleção do Thunder Client fornecida no projeto (arquivo `thunder-collection_code-challenge-java.json`).
+3. **Execute os Testes:** 
+   - Selecione as requisições desejadas na coleção e execute-as para verificar a funcionalidade da API.
 
-Boa sorte! 🚀
+A coleção foi projetada para cobrir todas as operações CRUD e outras funcionalidades.
+
+## Estrutura do Docker
+
+### Dockerfile - Backend
+
+
+    FROM openjdk:17-jdk-slim 
+    VOLUME /tmp
+    COPY target/*.jar app.jar
+    
+    ENTRYPOINT ["java", "-jar", "/app.jar"]
+    EXPOSE 8080
+
+### Dockerfile - Frontend
+
+    
+    FROM node:16 AS build 
+    WORKDIR /app
+    COPY package.json ./
+    COPY package-lock.json ./
+    RUN npm install --legacy-peer-deps
+    COPY . .
+    RUN npm run build
+    
+    FROM nginx:alpine
+    COPY --from=build /app/build /usr/share/nginx/html
+    EXPOSE 80
+
+### docker-compose.yml
+
+    services:
+      backend:
+        build:
+          context: ./backend
+          dockerfile: Dockerfile
+        container_name: backend
+        ports:
+          - "8080:8080"
+        environment:
+          - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/todo_app?useSSL=false&serverTimezone=UTC
+          - SPRING_DATASOURCE_USERNAME=root
+          - SPRING_DATASOURCE_PASSWORD=12345678
+        depends_on:
+          - db
+      
+      db:
+        image: mysql:5.7
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: 12345678
+          MYSQL_DATABASE: todo_app
+          MYSQL_USER: root
+          MYSQL_PASSWORD: 12345678
+        ports:
+          - "3306:3306"
+        
+      frontend:
+        build:
+          context: ./frontend
+          dockerfile: Dockerfile
+        container_name: frontend
+        ports:
+          - "3000:80"
