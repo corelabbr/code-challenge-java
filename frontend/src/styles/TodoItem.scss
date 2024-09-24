@@ -1,0 +1,64 @@
+@import './_colors.scss';
+
+.todo-item {
+  position: relative;
+  background: $color-white;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 390px;
+  height: 430px;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      color: $color-grey-dark;
+    }
+  }
+
+  p {
+    color: rgba(102, 102, 102, 1);
+    margin: 8px 0;
+  }
+
+  .todo-content-item {
+    width: calc(100% - 32px);
+    height: calc(100% - 120px);
+    margin: 15px;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 400;
+    color: $color-text-light;
+  }
+
+  .footer-todo-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 15px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 12px;
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      align-items: center;
+    }
+  }
+}

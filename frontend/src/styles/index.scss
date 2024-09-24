@@ -1,0 +1,55 @@
+@import "./_colors.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: $color-background;
+}
+
+#root {
+  min-height: 100%;
+  height: auto;
+  background-color: $color-background;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+.app {
+  padding: 2rem;
+}
+
+.app-container {
+  background-color: $color-background;
+  height: 100%;
+}
+
+.separator {
+  width: 100%;
+  border-bottom: 1px solid $color-separator;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  margin-right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: $color-favorite;
+}
+
+.favorite-btn.active {
+  color: $color-favorite-active;
+  font-size: 16px;
+}
+
+input,
+textarea {
+  &:disabled {
+    background-color: transparent;
+  }
+}
