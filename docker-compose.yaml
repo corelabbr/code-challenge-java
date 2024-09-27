@@ -1,0 +1,43 @@
+services:
+  postgres_dev:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "123"
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./codeChallenge/src/main/java/com/corelab/codeChallenge/data/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./codeChallenge/src/main/java/com/corelab/codeChallenge/data/postgres-data:/var/lib/postgresql/data
+      - ./codeChallenge/src/main/java/com/corelab/codeChallenge/data/postgres-data/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
+    networks:
+      - postgres-compose-network
+
+  java_dev:
+    build:
+      context: ./codeChallenge
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres_dev
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_dev:5432/codechallenges
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 123
+    ports:
+      - "8080:8080"
+    networks:
+      - postgres-compose-network
+
+  react_dev:
+    build:
+      context: ./corelab-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - postgres-compose-network
+
+networks:
+  postgres-compose-network:
+    driver: bridge
