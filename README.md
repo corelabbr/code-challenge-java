@@ -1,6 +1,6 @@
 # Corelab Code Challenge
 
-Este repositório contém a solução do **Corelab Code Challenge**, composto por um backend em Java e um frontend em React, ambos **containerizados com Docker**. Este README vai descrever à você alguns detalhes do projeto, tais como estruturas do projeto, pré requisitos, descisões de tomadas, etc...
+Este repositório contém a solução do **Corelab Code Challenge**, composto por um backend em Java e um frontend em React, ambos **containerizados com Docker**. Este README vai te guiar pelos passos necessários para rodar a aplicação localmente, garantindo que você possa modificar e executar o projeto sem problemas.
 
 Com este projeto, é possível:
 - Criar, ler, atualizar e deletar notas de tarefas de forma dinâmica e assíncrona.
@@ -49,7 +49,30 @@ Antes de começar, certifique-se de que você tem as seguintes ferramentas insta
   - Containerização: 🐳 Docker, 🐋 Docker Compose
   - Gerenciamento de dependências: 🧱 Maven
 
+> [!TIP]
+> # Iniciando no projeto
+> Primeiramente, em uma pasta qualquer no seu diretório (WIN + E), abra o prompt de comando (WIN + R e digit *cmd* na caixinha que abrir no canto inferior esquerdo da sua tela),
+> após isso, digite *```git clone https://github.com/MathSzoke/code-challenge-java.git```* no CMD (janela preta)
+>
+> Em seguida, digite *```cd ./code-challenge-java```.
+> Também, devemos garantir que você esteja no diretório correto, e vendo as pastas/arquivos corretos, execute: ```dir```
+> 
+> Você deverá ver os seguintes arquivos e pastas na coluna *Name* após o uso do *dir*:
+> - 📁 codeChallenge
+> - 📁 corelab-frontend
+> - 📄 docker-compose.yaml
+> - 📄 Leiame.rd
+> - 📄 README.rd
+>
+> Caso esteja vendo exatamente isso, execute o comando ```docker-compose up```
+>
+> Esperando um minutinho, você poderá garantir que os containers do Docker estão funcionando quando não atualizar mais as mensagens do CMD (Prompt de comando), ou, acessando o hub do Docker Hub e visualizando se os containers estão com o status de "Running", ou "Rodando".
+>
+> Com isso, caso tudo esteja dentro dos conformes, será possível você acessar o link [localhost](http://localhost:3000)
+> e assim, utilizar do projeto.
+
+
 > [!IMPORTANT]
-> # Implementação do Projeto
+> # Manutenção do Projeto
 > - Acesse o README de cada pasta (codeChallenge, corelab-frontend) para acompanhar os detalhes importantes da implementação.
 > - Não é necessário executar ambos os projetos. Ao seguir o passo a passo do README do codeChallenge, será possível acessar as rotas a partir do link-host do Docker.
