@@ -9,5 +9,5 @@ CREATE TABLE corelab.todos (
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     favorite BOOLEAN DEFAULT FALSE,
-    color VARCHAR(50) NOT NULL,
+    color VARCHAR(50) NOT NULL
 );

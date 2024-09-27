@@ -6,14 +6,15 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./postgres-data:/var/lib/postgresql/data
+      - ./codeChallenge/src/main/java/com/corelab/codeChallenge/data/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./codeChallenge/src/main/java/com/corelab/codeChallenge/data/postgres-data:/var/lib/postgresql/data
+      - ./codeChallenge/src/main/java/com/corelab/codeChallenge/data/postgres-data/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
     networks:
       - postgres-compose-network
 
   java_dev:
     build:
-      context: ..
+      context: ./codeChallenge
       dockerfile: Dockerfile
     depends_on:
       - postgres_dev
@@ -28,7 +29,7 @@ services:
 
   react_dev:
     build:
-      context: ../../corelab-frontend
+      context: ./corelab-frontend
       dockerfile: Dockerfile
     ports:
       - "3000:3000"

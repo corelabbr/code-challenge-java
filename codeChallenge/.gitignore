@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### Postgres Data ###
-corelab-challenge/postgres-data/
+src/main/java/com/**/**/data/postgres-data/
