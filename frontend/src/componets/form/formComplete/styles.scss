@@ -1,0 +1,47 @@
+.principal-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 !important;
+    max-width: none !important;
+
+    &-header {
+        display: flex;
+        flex-direction: row-reverse;
+
+    }   
+
+    .info-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 16px;
+
+        @media (max-width: 600px) {
+            align-items: normal;
+            flex-direction: column-reverse;
+
+            #total {
+                margin-bottom: 16px;
+            }
+        }
+
+        .footer-buttons {
+            display: flex;
+            flex-direction: row;
+
+            button {
+                margin-right: 8px;
+            }
+
+            button:last-of-type {
+                margin-right: 0;
+            }
+        }
+
+    }
+}
+
+.container-box {
+    margin: 0 288px 0 0 !important;
+}

@@ -1,0 +1,102 @@
+.toolbar {
+    min-height: 64px !important;
+    margin: 0 !important;
+
+    .toolbar-content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .toolbar-content-title {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            @media (max-width: 600px) {
+                gap: 4px;
+            }
+            
+            .toolbar-content-action {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                
+                @media (max-width: 600px) { 
+                    img {
+                        height: 20px;
+                    }
+
+                    h1 {
+                        display: none;
+                    }
+
+                    button {
+                        padding: 0 4px 4px;
+                    }
+                }
+                
+                .toolbar-content-search {
+                    background-color: #FFF;
+                    border-radius: 8px;
+                    min-width: 400px;
+                    
+                    @media (max-width: 600px) { 
+                        min-width: auto;
+                    }
+
+                    svg {
+                        cursor: pointer;
+                    }
+                }
+            
+                .toolbar-content-arrows {
+                    display: flex;
+            
+                    svg {
+                        color: #FFF;
+                    }
+                }
+
+                @media (max-width: 600px) {
+                    flex-direction: column;
+                    gap: 4px;
+                    padding-top: 4px;
+                }
+            }
+
+            .toolbar-content-action-disable {
+                @media (max-width: 600px) {
+                    display: none;
+                }
+            }
+
+        }
+
+        .toolbar-content-logout {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+}
+
+.header-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-container {
+    padding:0  !important;
+    margin: 0 !important;
+
+    .main-box {
+        padding: 8px 8px 0 8px !important;
+    }
+}
+
+.MuiAccordionSummary-root:hover{
+    background-color: #F5F5F5;
+}

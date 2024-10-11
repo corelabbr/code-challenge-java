@@ -1,0 +1,39 @@
+.principal-container-component-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 !important;
+    max-width: none !important;
+
+    .header-list {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        
+        @media (max-width: 600px){  
+            padding: 8px;
+            display: block;
+
+            .header-list-title {
+                padding-bottom: 8px;
+            }
+        }
+    }
+
+    .header-list-search {
+        @media (min-width: 600px){  
+            width: 400px;
+        }
+        display: flex;
+        align-items: flex-end;
+        justify-content: end;
+        margin-right: 0;
+
+    }
+}
+
+.container-box {
+    margin: 0 288px 0 0 !important;
+}

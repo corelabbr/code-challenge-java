@@ -1,0 +1,137 @@
+.principal-container-dashboard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 64px);
+    @media (max-width: 600px) {
+        margin-top: 50px;
+    }
+
+    .container-body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        min-height: calc(100vh - 240px);
+        gap: 16px;
+        padding: 12px;
+        
+        @media (max-width: 600px) {
+            grid-template-columns: none
+        }
+
+        .card-task {
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: none;
+
+            .card-task-header {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #444;
+                padding: 12px;
+
+                .card-task-body {
+                    display: flex;
+                    flex-direction: column;
+
+                    .card-task-title {
+                        font-size: large;
+                        font-weight: bold;
+                    }
+
+                    .card-task-date {
+                        font-size: small;
+                    }
+                }
+
+                .card-task-icon-favorite {
+                    svg {
+                        cursor: pointer;
+                        color: #ffa000;
+                    }
+                }
+
+                .card-task-icon-nofavorite {
+                    svg {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .card-task-content-actions-colorfill {
+                svg {
+                    color: #ffa000;
+                }
+            }
+        }
+    }
+
+    .container-boby-max-height {
+        min-height: auto;
+        max-height: calc(100vh - 240px);
+    }
+
+    .container-header {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        .card-addtask {
+            border-radius: 12px;
+            width: 50%;
+
+            @media (max-width: 600px) {
+                width: 80%;
+            }
+
+            .card-addtask-header {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #444;
+                padding: 12px;
+
+                .card-addtask-body {
+                    display: flex;
+                    flex-direction: column;
+
+                    .card-addtask-title {
+                        font-size: large;
+                        font-weight: bold;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.card-content-actions-item {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    height: 60px;
+    width: 530px;
+    padding: 0 12px;
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(6, 1fr);
+        height: 120px;
+        width: 265px;
+    }
+
+    .card-content-actions-item-color {
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+        cursor: pointer;
+    }
+}
+
+.box-modal {
+    .box-modal-title {
+        margin-bottom: 12px;
+    }
+}

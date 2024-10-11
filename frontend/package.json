@@ -1,0 +1,93 @@
+{
+  "name": "frontend-gestao",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@amcharts/amcharts5": "^5.2.26",
+    "@date-io/date-fns": "^2.13.1",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.6.2",
+    "@mui/material": "^5.6.2",
+    "@mui/styles": "^5.6.2",
+    "@mui/x-data-grid": "^5.9.0",
+    "@mui/x-date-pickers": "^5.0.0-alpha.2",
+    "@nestjs/mapped-types": "*",
+    "@tanstack/react-table": "^8.7.9",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^16.11.27",
+    "@types/react": "^18.0.6",
+    "@types/react-dom": "^18.0.2",
+    "@types/react-event-listener": "^0.4.12",
+    "@types/react-router-dom": "^5.2.0",
+    "@types/styled-components": "^5.1.2",
+    "axios": "^0.26.1",
+    "date-fns": "^2.28.0",
+    "dayjs": "^1.11.8",
+    "install": "^0.13.0",
+    "jwt-decode": "^3.1.2",
+    "lodash": "^4.17.21",
+    "material-ui-numeric-input": "^3.1.0",
+    "moment": "^2.29.3",
+    "moment-timezone": "^0.5.37",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-hook-form": "7.25.3",
+    "react-icons": "^3.10.0",
+    "react-imask": "^6.4.2",
+    "react-number-format": "^4.9.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "5.0.1",
+    "react-spring": "^8.0.27",
+    "react-table": "^7.8.0",
+    "recharts": "^2.1.14",
+    "sass": "^1.50.1",
+    "socket.io-client": "^2.3.1",
+    "styled-components": "^5.1.1",
+    "typescript": "^4.6.3",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/moment": "^2.13.0",
+    "@types/moment-timezone": "^0.5.30",
+    "@types/react-table": "^7.7.14",
+    "@types/socket.io-client": "^1.4.36",
+    "prettier": "2.3.2"
+  },
+  "scripts": {
+    "start": "REACT_APP_ENVIROMENT=local react-scripts start",
+    "start:prod": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "optimizeDeps": {
+    "exclude": [
+      "ract-hook-form"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
