@@ -1,0 +1,24 @@
+.root {
+  display: flex;
+}
+.title {
+  flex-grow: 1;
+}
+// appBarSpacer {} theme.mixins.toolbar;
+.content {
+  flex-grow: 1;
+  height: 100vh;
+  overflow: auto;
+}
+.container {
+  padding: 0;
+  margin: 0;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+.paper {
+  // padding: 2%;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+}
